@@ -3,6 +3,7 @@ import subprocess
 import random
 import os
 
+BotToken = os.environ["TOH_QUIZ_BOT_TOKEN"]
 directory = os.path.dirname(__file__)
 
 namesFile = open("EpisodeNames.txt")
@@ -51,27 +52,4 @@ async def on_message(message):
         quote, name = generateQuote(True)
         await message.channel.send(quote)
 
-client.run("MTEwMzUwODI0NTk2NTk3OTczOA.GQc7JV.ve2qDq80rUfpllVkkW4VbyjObzLB2_72s3r1rA")
-
-
-
-
-
-
-# quote, name = generateQuote(True)
-# print("Your quote is:\n")
-
-# print(quote)
-
-# print("What is the name of the episode this quote is from?")
-# guess = input("> ")
-# guess = guess.replace(" ", "")
-# guess = guess.replace("'", "")
-# guess = guess.replace(",", "")
-# guess = guess.lower()
-
-# if guess == name.lower():
-#     print("Correct!\n")
-# else:
-#     print("Sorry, that is incorrect. The correct answer was:")
-#     print(name)
+client.run(BotToken)
